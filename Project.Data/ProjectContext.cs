@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using System;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Project.Data.Configuration;
 using System.Data.Entity;
 using Project.Domain.Entities;
@@ -21,6 +22,11 @@ namespace Project.Data
         {
             modelBuilder.Configurations.Add(new GadgetConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
+        }
+
+        public static IDisposable Create()
+        {
+            return new ProjectContext();
         }
     }
 }
