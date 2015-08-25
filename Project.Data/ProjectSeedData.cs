@@ -154,7 +154,7 @@ namespace Project.Data
             var roleManager = new RoleManager<IdentityRole>(new
                                        RoleStore<IdentityRole>(context));
 
-            const string username = "admin@spt.com";
+            const string username = "admin@somesite.com";
             const string password = "password!";
 
             if (!roleManager.RoleExists(UserType.Admin.ToString()))
