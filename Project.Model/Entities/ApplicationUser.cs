@@ -1,6 +1,8 @@
-﻿namespace Project.Domain.Entities
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+
+namespace Project.Domain.Entities
 {
-    public class ApplicationUser
+    public class ApplicationUser : IdentityUser
     {
          
     }

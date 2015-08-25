@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Project.Domain.Entities;
+using Project.Domain.Enums;
 
 namespace Project.Data
 {
@@ -10,6 +13,7 @@ namespace Project.Data
         {
             GetCategories().ForEach(c => context.Categories.Add(c));
             GetGadgets().ForEach(g => context.Gadgets.Add(g));
+            AddAdminUser(context);
 
             context.Commit();
         }
@@ -141,6 +145,30 @@ namespace Project.Data
                 }
  
             };
+        }
+
+        private static string AddAdminUser(ProjectContext context)
+        {
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+            var roleManager = new RoleManager<IdentityRole>(new
+                                       RoleStore<IdentityRole>(context));
+
+            const string username = "admin@spt.com";
+            const string password = "password!";
+
+            if (!roleManager.RoleExists(UserType.Admin.ToString()))
+                roleManager.Create(new IdentityRole(UserType.Admin.ToString()));
+
+            var user = new ApplicationUser { UserName = username };
+            var adminresult = userManager.Create(user, password);
+
+            if (adminresult.Succeeded)
+                userManager.AddToRole(user.Id, UserType.Admin.ToString());
+
+            context.Commit();
+
+            return user.Id;
         }
     }
 }

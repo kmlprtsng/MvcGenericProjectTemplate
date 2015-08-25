@@ -1,10 +1,11 @@
-﻿using Project.Data.Configuration;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Project.Data.Configuration;
 using System.Data.Entity;
 using Project.Domain.Entities;
 
 namespace Project.Data
 {
-    public class ProjectContext : DbContext
+    public class ProjectContext : IdentityDbContext<ApplicationUser>
     {
         public ProjectContext() : base("ProjectContext") { }
 
