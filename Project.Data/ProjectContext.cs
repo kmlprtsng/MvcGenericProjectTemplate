@@ -24,7 +24,7 @@ namespace Project.Data
             modelBuilder.Configurations.Add(new CategoryConfiguration());
         }
 
-        public static IDisposable Create()
+        public static ProjectContext Create()
         {
             return new ProjectContext();
         }
