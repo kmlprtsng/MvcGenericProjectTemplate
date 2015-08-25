@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Project.Model.Models
+namespace Project.Domain.Entities
 {
     public class Category
     {

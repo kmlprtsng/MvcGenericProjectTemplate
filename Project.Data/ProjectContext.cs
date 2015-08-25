@@ -1,6 +1,6 @@
 ﻿using Project.Data.Configuration;
 using System.Data.Entity;
-using Project.Model.Models;
+using Project.Domain.Entities;
 
 namespace Project.Data
 {

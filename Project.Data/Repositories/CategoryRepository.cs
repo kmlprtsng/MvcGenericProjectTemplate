@@ -1,11 +1,7 @@
 ﻿using Project.Data.Infrastructure;
-using Project.Model;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Project.Model.Models;
+using Project.Domain.Entities;
 
 namespace Project.Data.Repositories
 {

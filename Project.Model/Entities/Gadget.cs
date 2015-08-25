@@ -1,4 +1,4 @@
-﻿namespace Project.Model.Models
+﻿namespace Project.Domain.Entities
 {
     public class Gadget
     {
