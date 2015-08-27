@@ -9,7 +9,7 @@ using System.Web.Routing;
 
 namespace Project.Web
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {

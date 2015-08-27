@@ -19,8 +19,15 @@ namespace Project.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Configurations.Add(new GadgetConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
+        }
+
+        public static ProjectContext Create()
+        {
+            return new ProjectContext();
         }
     }
 }

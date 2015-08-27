@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
-using Project.Model;
-using Project.Model.Models;
+using Project.Domain.Entities;
 using Project.Web.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace Project.Web.Mappings
 {

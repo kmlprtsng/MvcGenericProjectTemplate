@@ -18,4 +18,6 @@ This project is based on the ideas of [Christos S](http://en.gravatar.com/chsake
 ## TODO
 - Add the web project with Form based authentication
 - Look into setting up WebApi with Token based authentication
-- 
+
+## Troubleshooting
+- If you get any dll errors, try cleaning the solution, check the bin folder for any old dlls and manually delete if required. Build and Try again.
