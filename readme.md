@@ -4,6 +4,10 @@ There is an overhead starting a new N-tier project and the purpose of this repos
 
 This project is based on the ideas of [Christos S](http://en.gravatar.com/chsakell) and his article [ASP.NET MVC Solution Architecture – Best Practices](http://chsakell.com/2015/02/15/asp-net-mvc-solution-architecture-best-practices/).
 
+## Getting Started
+- Clone the project
+- Right click on the Project.Web and set that as your default project.
+
 ## Renaming the Project
 
 - Rename the solution
