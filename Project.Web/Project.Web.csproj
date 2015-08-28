@@ -197,8 +197,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Gadget.cshtml" />
-    <Content Include="Views\Home\Filter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
