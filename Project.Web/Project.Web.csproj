@@ -149,21 +149,6 @@
     <Content Include="css\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="images\acer-aspire.jpg" />
-    <Content Include="images\Alldaymall.jpg" />
-    <Content Include="images\asus-latest.jpg" />
-    <Content Include="images\asus-memo.jpg" />
-    <Content Include="images\dell-inspiron.jpg" />
-    <Content Include="images\dragon-touch.jpg" />
-    <Content Include="images\hp-pavilion.jpg" />
-    <Content Include="images\hp-stream.jpg" />
-    <Content Include="images\htc-desire.jpg" />
-    <Content Include="images\neutab.jpg" />
-    <Content Include="images\nokia-lumia.jpg" />
-    <Content Include="images\prontotec.jpg" />
-    <Content Include="images\samsung-galaxy.jpg" />
-    <Content Include="images\sanyo-innuendo.jpg" />
-    <Content Include="images\ulefone.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\site.js" />
     <Content Include="Web.config" />
@@ -184,9 +169,6 @@
     <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\CategoryViewModel.cs" />
-    <Compile Include="ViewModels\GadgetFormViewModel.cs" />
-    <Compile Include="ViewModels\GadgetViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -197,8 +179,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Gadget.cshtml" />
-    <Content Include="Views\Home\Filter.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -222,7 +202,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\" />
     <Folder Include="Models\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

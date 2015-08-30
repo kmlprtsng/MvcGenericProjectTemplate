@@ -1,6 +1,4 @@
 ﻿using AutoMapper;
-using Project.Domain.Entities;
-using Project.Web.ViewModels;
 
 namespace Project.Web.Mappings
 {
@@ -13,8 +11,6 @@ namespace Project.Web.Mappings
 
         protected override void Configure()
         {
-            Mapper.CreateMap<Category,CategoryViewModel>();
-            Mapper.CreateMap<Gadget, GadgetViewModel>();
         }
     }
 }
