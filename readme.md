@@ -73,16 +73,100 @@ public class CategoryRepository : RepositoryBase<Category>, ICategoryRepository
 ```
 
 ## Add Services
-instructions coming soon....
+- Add service class for domain entity e.g.
+```
+public interface ICategoryService
+    {
+        IEnumerable<Category> GetCategories(string name = null);
+        Category GetCategory(int id);
+        Category GetCategory(string name);
+        void CreateCategory(Category category);
+        void SaveCategory();
+    }
 
-## Setup AutofacContainer
-instructions coming soon....
+    public class CategoryService : ICategoryService
+    {
+        private readonly ICategoryRepository categorysRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-## Domain to ViewModel Mapping
-instructions coming soon....
+        public CategoryService(ICategoryRepository categorysRepository, IUnitOfWork unitOfWork)
+        {
+            this.categorysRepository = categorysRepository;
+            this.unitOfWork = unitOfWork;
+        }
 
-## ViewModel to Domain Mapping
-instructions coming soon....
+        #region ICategoryService Members
+
+        public IEnumerable<Category> GetCategories(string name = null)
+        {
+            if (string.IsNullOrEmpty(name))
+                return categorysRepository.GetAll();
+            else
+                return categorysRepository.GetAll().Where(c => c.Name == name);
+        }
+
+        public Category GetCategory(int id)
+        {
+            var category = categorysRepository.GetById(id);
+            return category;
+        }
+
+        public Category GetCategory(string name)
+        {
+            var category = categorysRepository.GetCategoryByName(name);
+            return category;
+        }
+
+        public void CreateCategory(Category category)
+        {
+            categorysRepository.Add(category);
+        }
+
+        public void SaveCategory()
+        {
+            unitOfWork.Commit();
+        }
+
+        #endregion
+    }
+```
+
+## Setup AutofacContainer (for dependency injection)
+- Register your first **repository** class with Autofac in the Web project in the Bootstrapper class's **SetAutofacContainer** method. Required only once.
+
+```
+	builder.RegisterAssemblyTypes(typeof(CategoryRepository).Assembly)
+		.Where(t => t.Name.EndsWith("Repository"))
+        .AsImplementedInterfaces().InstancePerRequest();
+```
+- Register your first **service** class with Autofac in the Web project in the Bootstrapper class's **SetAutofacContainer** method. Required only once.
+
+```
+	builder.RegisterAssemblyTypes(typeof(CategoryService).Assembly)
+    	.Where(t => t.Name.EndsWith("Service"))
+		.AsImplementedInterfaces().InstancePerRequest();
+```
+
+## Setup AutoMapper
+- Set up domain to ViewModel mappings in **DomainToViewModelMappingProfile** class e.g.
+```
+		protected override void Configure()
+        {
+            Mapper.CreateMap<Category,CategoryViewModel>();
+        }
+```
+- Set up ViewModel to domain mapping in **ViewModelToDomainMappingProfile** class e.g.
+```
+        protected override void Configure()
+        {
+            Mapper.CreateMap<GadgetFormViewModel, Gadget>()
+                .ForMember(g => g.Name, map => map.MapFrom(vm => vm.GadgetTitle))
+                .ForMember(g => g.Description, map => map.MapFrom(vm => vm.GadgetDescription))
+                .ForMember(g => g.Price, map => map.MapFrom(vm => vm.GadgetPrice))
+                .ForMember(g => g.Image, map => map.MapFrom(vm => vm.File.FileName))
+                .ForMember(g => g.CategoryID, map => map.MapFrom(vm => vm.GadgetCategory));
+        }
+```
 
 ## TODO
 - Add the web project with Form based authentication
