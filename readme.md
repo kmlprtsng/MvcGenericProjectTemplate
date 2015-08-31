@@ -4,9 +4,24 @@ There is an overhead starting a new N-tier project and the purpose of this repos
 
 This project is based on the ideas of [Christos S](http://en.gravatar.com/chsakell) and his article [ASP.NET MVC Solution Architecture – Best Practices](http://chsakell.com/2015/02/15/asp-net-mvc-solution-architecture-best-practices/).
 
+## Pre-requisites
+- VS 2013 or above
+- Bower is installed
+
+
 ## Getting Started
 - Clone the project
 - Right click on the Project.Web and set that as your default project.
+
+## Bower Settings
+The following two libraries have been installed
+- Bootstrap
+- Jquery
+
+You might consider adding the following libraries for MVC 
+- fontawesome
+- jquery-validation-unobtrusive
+- jquery-ajax-unobtrusive
 
 ## Renaming the Project
 
