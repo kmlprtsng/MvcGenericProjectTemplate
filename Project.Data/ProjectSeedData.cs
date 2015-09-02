@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Project.Domain.Entities;
@@ -23,7 +22,7 @@ namespace Project.Data
             var roleManager = new RoleManager<IdentityRole>(new
                                        RoleStore<IdentityRole>(context));
 
-            const string username = "admin@somesite.com";
+            const string username = "admin@yoursite.com";
             const string password = "password!";
 
             if (!roleManager.RoleExists(UserType.Admin.ToString()))

@@ -5,5 +5,12 @@
 
 <div class="container">
     <h1>Hello World</h1>
-    <strong>Start your dream project now...</strong>
+    <p><strong>Start your dream project now...</strong></p>
+    
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>
+            Congratulations!! You are logged in @User.Identity.Name
+        </p>
+    }
 </div>

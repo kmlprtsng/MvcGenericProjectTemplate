@@ -36,13 +36,22 @@
                     <li class="active"><a href="javascript:void(0)">Home</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="javascript:void(0)">Login</a></li>                    
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Register", "Register", "Account")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Account")</li>
+                    }
                 </ul>
             </div>
         </div>
     </nav>
-
-    @RenderBody()
+    <div class="container">
+        @RenderBody()
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     @Scripts.Render("~/bootstrap/js")
 </body>

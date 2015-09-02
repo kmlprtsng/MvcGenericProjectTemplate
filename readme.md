@@ -12,6 +12,7 @@ This project is based on the ideas of [Christos S](http://en.gravatar.com/chsake
 ## Getting Started
 - Clone the project
 - Right click on the Project.Web and set that as your default project.
+- In the project seed a user is created by default with Logins: admin@yoursite.com\password!.
 
 ## Bower Settings
 The following two libraries have been installed
@@ -184,7 +185,7 @@ public interface ICategoryService
 ```
 
 ## TODO
-- Add the web project with Form based authentication
+- Hook up AngularJs Project
 - Look into setting up WebApi with Token based authentication
 
 ## Troubleshooting
