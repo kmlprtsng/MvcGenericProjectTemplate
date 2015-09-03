@@ -21,7 +21,6 @@ The following two libraries have been installed
 
 You might consider adding the following libraries for MVC 
 - fontawesome
-- jquery-validation-unobtrusive
 - jquery-ajax-unobtrusive
 
 ## Renaming the Project
