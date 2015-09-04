@@ -51,13 +51,17 @@ namespace Project.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+                var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: true);
                 switch (result)
                 {
                     case SignInStatus.Success:
                         return RedirectToLocal(returnUrl);
                     case SignInStatus.LockedOut:
-                        return View("Lockout");
+                        ModelState.AddModelError("",
+                            string.Format(
+                                "Your account has been locked out for {0} minutes due to multiple failed login attempts.",
+                                SettingsManager.DefaultAccountLockoutTimeSpan.TotalMinutes));
+                        return View(model);
                     case SignInStatus.Failure:
                     default:
                         ModelState.AddModelError("", "Invalid username or password.");

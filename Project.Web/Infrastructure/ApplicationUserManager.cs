@@ -37,6 +37,10 @@ namespace Project.Web.Infrastructure
                 RequireUniqueEmail = true
             };
 
+            manager.UserLockoutEnabledByDefault = SettingsManager.UserLockoutEnabledByDefault;
+            manager.DefaultAccountLockoutTimeSpan = SettingsManager.DefaultAccountLockoutTimeSpan;
+            manager.MaxFailedAccessAttemptsBeforeLockout = SettingsManager.MaxFailedAccessAttemptsBeforeLockout;
+
             return manager;
         }
     }
