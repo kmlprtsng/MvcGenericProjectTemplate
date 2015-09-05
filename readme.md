@@ -183,6 +183,9 @@ public interface ICategoryService
         }
 ```
 
+## Configuring Security
+If you need to configure the **password requirements** then go to the **ApplicationUserManager** class in the Web Project. Also in the web.config file (under the app settings), the **account lockout** feature can also be toggled on or off along with other relevant settings for that.
+
 ## TODO
 - Hook up AngularJs Project
 - Look into setting up WebApi with Token based authentication
