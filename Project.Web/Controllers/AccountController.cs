@@ -118,6 +118,17 @@ namespace Project.Web.Controllers
             return View(model);
         }
 
+        [AllowAnonymous]
+        public async Task<ActionResult> ConfirmEmail(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return View("Error");
+            }
+            var result = await UserManager.ConfirmEmailAsync(userId, code);
+            return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
+
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
