@@ -2,7 +2,9 @@
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
+using Microsoft.AspNet.Identity;
 using Project.Data.Infrastructure;
+using Project.Web.Infrastructure;
 using Project.Web.Mappings;
 
 namespace Project.Web
@@ -21,6 +23,7 @@ namespace Project.Web
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
+            builder.RegisterType<SmtpEmailService>().As<IIdentityMessageService>().InstancePerRequest();
 
             // Repositories
             //            builder.RegisterAssemblyTypes(typeof(ADD_REPOSITORY_CLASS_NAME_HERE).Assembly)

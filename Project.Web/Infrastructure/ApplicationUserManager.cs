@@ -9,9 +9,10 @@ namespace Project.Web.Infrastructure
 {
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {
-        public ApplicationUserManager(IUserStore<ApplicationUser> store)
+        public ApplicationUserManager(IUserStore<ApplicationUser> store, IIdentityMessageService emailService)
             : base(store)
         {
+            EmailService = emailService;
         }
 
         public static ApplicationUserManager Create(
@@ -19,7 +20,7 @@ namespace Project.Web.Infrastructure
             IOwinContext context)
         {
             var dbContext = context.Get<ProjectContext>();
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(dbContext))
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(dbContext), new SmtpEmailService()) //TODO-KC Dependency Inject
             {
                 PasswordValidator = new PasswordValidator
                 {
@@ -40,7 +41,7 @@ namespace Project.Web.Infrastructure
             manager.UserLockoutEnabledByDefault = SettingsManager.UserLockoutEnabledByDefault;
             manager.DefaultAccountLockoutTimeSpan = SettingsManager.DefaultAccountLockoutTimeSpan;
             manager.MaxFailedAccessAttemptsBeforeLockout = SettingsManager.MaxFailedAccessAttemptsBeforeLockout;
-
+            manager.UserTokenProvider = new EmailTokenProvider<ApplicationUser, string>();
             return manager;
         }
     }
