@@ -387,8 +387,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\SmtpEmailService.cs" />
     <Compile Include="Infrastructure\SettingsManager.cs" />
+    <Compile Include="ViewModels\Accounts\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Accounts\LoginViewModel.cs" />
     <Compile Include="ViewModels\Accounts\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Accounts\ResetPasswordViewModel.cs" />
     <Content Include="css\site.css" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -520,6 +522,11 @@
     <Content Include="bower_components\jquery-validation\README.md" />
     <Content Include="bower_components\jquery-validation\validation.jquery.json" />
     <Content Include="Views\Account\Error.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
