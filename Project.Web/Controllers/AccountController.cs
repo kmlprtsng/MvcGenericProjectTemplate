@@ -143,10 +143,16 @@ namespace Project.Web.Controllers
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                if (user == null)
                 {
                     // Don't reveal that the user does not exist or is not confirmed
                     return View("ForgotPasswordConfirmation");
+                }
+
+                if(!(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                {
+                    ModelState.AddModelError("", "Your account is not yet confirmed. Please confirm your account by clicking on the confirm link in your registration email");
+                    return View(model);
                 }
 
                 // Send an email with this link
