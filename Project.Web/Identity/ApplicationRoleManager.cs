@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Project.Data;
 
-namespace Project.Web.Infrastructure
+namespace Project.Web.Identity
 {
     public class ApplicationRoleManager : RoleManager<IdentityRole>
     {

@@ -4,8 +4,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Project.Data;
 using Project.Domain.Entities;
+using Project.Web.Infrastructure;
 
-namespace Project.Web.Infrastructure
+namespace Project.Web.Identity
 {
     public class ApplicationUserManager : UserManager<ApplicationUser>
     {

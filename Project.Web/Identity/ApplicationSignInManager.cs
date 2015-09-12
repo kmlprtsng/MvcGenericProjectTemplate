@@ -3,7 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Project.Domain.Entities;
 
-namespace Project.Web.Infrastructure
+namespace Project.Web.Identity
 {
     public class ApplicationSignInManager : SignInManager<ApplicationUser, string>
     {

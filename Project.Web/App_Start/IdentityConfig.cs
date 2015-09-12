@@ -3,6 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 using Project.Data;
+using Project.Web.Identity;
 using Project.Web.Infrastructure;
 
 namespace Project.Web

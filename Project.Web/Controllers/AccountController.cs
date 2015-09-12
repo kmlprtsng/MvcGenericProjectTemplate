@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Project.Domain.Entities;
+using Project.Web.Identity;
 using Project.Web.Infrastructure;
 using Project.Web.ViewModels.Accounts;
 
