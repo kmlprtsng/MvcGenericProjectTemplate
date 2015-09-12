@@ -51,8 +51,8 @@ namespace Project.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userid = UserManager.FindByEmail(model.Email).Id;
-                if (!UserManager.IsEmailConfirmed(userid))
+                var user = UserManager.FindByEmail(model.Email);
+                if (user != null && !UserManager.IsEmailConfirmed(user.Id))
                 {
                     ModelState.AddModelError("", "Please confirm your account by following the instructions in the confirmation email.");
                     return View(model);
