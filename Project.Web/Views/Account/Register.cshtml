@@ -1,4 +1,5 @@
-﻿@model Project.Web.ViewModels.Accounts.RegisterViewModel
+﻿@using Project.Web.Core.Extensions
+@model Project.Web.ViewModels.Accounts.RegisterViewModel
 
 @{
     ViewBag.Title = "Register";
@@ -11,6 +12,8 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
+    @Html.SpamProtectionTimeStamp()
+
     <div class="form-horizontal">
         <hr />
         <div class="row">

@@ -376,7 +376,9 @@
     <Content Include="bower_components\jquery\src\wrap.js" />
     <Content Include="Global.asax" />
     <Content Include="js\site.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\Bootstrapper.cs" />
@@ -546,6 +548,10 @@
     <ProjectReference Include="..\Project.Service\Project.Service.csproj">
       <Project>{bd210642-ac0e-41f8-b954-70d52a27edeb}</Project>
       <Name>Project.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Web.Core\Project.Web.Core.csproj">
+      <Project>{82872CC9-1181-4514-80CB-F95CC93D54E6}</Project>
+      <Name>Project.Web.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

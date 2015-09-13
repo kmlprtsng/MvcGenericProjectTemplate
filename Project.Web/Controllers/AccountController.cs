@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Project.Domain.Entities;
+using Project.Web.Core.Attributes;
 using Project.Web.Identity;
 using Project.Web.Infrastructure;
 using Project.Web.ViewModels.Accounts;
@@ -46,6 +47,7 @@ namespace Project.Web.Controllers
         }
 
         [AllowAnonymous]
+        [SpamProtection]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
@@ -96,6 +98,7 @@ namespace Project.Web.Controllers
 
         [HttpPost]
         [AllowAnonymous]
+        [SpamProtection]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
