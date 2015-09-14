@@ -34,7 +34,7 @@ namespace Project.Web
 //               .Where(t => t.Name.EndsWith("Service"))
 //               .AsImplementedInterfaces().InstancePerRequest();
 
-            IContainer container = builder.Build();
+            var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
     }
