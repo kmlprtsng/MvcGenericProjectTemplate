@@ -13,6 +13,7 @@ This project is based on the ideas of [Christos S](http://en.gravatar.com/chsake
 - Clone the project
 - Right click on the Project.Web and set that as your default project.
 - In the project seed a user is created by default with Logins: admin@yoursite.com\password!.
+- Create "C:\TestMailMessages" folder. Emails will be sent to this folder. To send email via the SMTP server please configure the settings in the web.config.
 
 ## Bower Settings
 The following two libraries have been installed
@@ -185,6 +186,14 @@ public interface ICategoryService
 
 ## Configuring Security
 If you need to configure the **password requirements** then go to the **ApplicationUserManager** class in the Web Project. Also in the web.config file (under the app settings), the **account lockout** feature can also be toggled on or off along with other relevant settings for that.
+
+## Spam Filter
+Spam filter has been added in order to stop the spammers from registering on the site. The implementation of it is from Daniel Palme's [blog post](http://www.palmmedia.de/Blog/2009/11/17/aspnet-mvc-how-to-protect-your-website-against-spam). Please refer to that for more information.
+
+## Emails
+Currently when the user registers, an email is sent to confirm the registration. The emails will be stored to the C:\TestMailMessages folder unless the web.config is updated with different settings. 
+
+It might be useful to use the [MVCMailer](https://github.com/smsohan/MvcMailer) or something similar to create good looking email.
 
 ## TODO
 - Hook up AngularJs Project
