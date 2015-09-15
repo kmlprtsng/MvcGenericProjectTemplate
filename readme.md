@@ -196,6 +196,7 @@ Currently when the user registers, an email is sent to confirm the registration.
 It might be useful to use the [MVCMailer](https://github.com/smsohan/MvcMailer) or something similar to create good looking email.
 
 ## TODO
+- [Github pages](http://kmlprtsng.github.io/MvcGenericProjectTemplate/)
 - Hook up AngularJs Project
 - Look into setting up WebApi with Token based authentication
 
