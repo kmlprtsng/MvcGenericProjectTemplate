@@ -4,6 +4,7 @@ using Microsoft.Owin.Security.Cookies;
 using Owin;
 using Project.Data;
 using Project.Web.Identity;
+using Microsoft.Owin.Security.Google;
 
 namespace Project.Web
 {
@@ -21,6 +22,8 @@ namespace Project.Web
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login")
             });
+
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions());
         } 
     }
 }
