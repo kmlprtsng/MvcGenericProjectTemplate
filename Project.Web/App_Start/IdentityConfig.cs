@@ -23,7 +23,11 @@ namespace Project.Web
                 LoginPath = new PathString("/Account/Login")
             });
 
-            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions());
+//            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions
+//            {
+//                ClientId = "",
+//                ClientSecret = ""
+//            });
         } 
     }
 }
