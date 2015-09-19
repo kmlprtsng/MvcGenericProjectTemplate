@@ -22,6 +22,7 @@ namespace Project.Web
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/Account/Login")
             });
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
 //            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions
 //            {

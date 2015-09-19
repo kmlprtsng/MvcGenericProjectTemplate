@@ -405,6 +405,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Infrastructure\SmtpEmailService.cs" />
     <Compile Include="Infrastructure\SettingsManager.cs" />
+    <Compile Include="ViewModels\Accounts\ExternalLoginListViewModel.cs" />
     <Compile Include="ViewModels\Accounts\ForgotPasswordViewModel.cs" />
     <Compile Include="ViewModels\Accounts\LoginViewModel.cs" />
     <Compile Include="ViewModels\Accounts\RegisterViewModel.cs" />
@@ -546,6 +547,7 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\RegisterEmailConfirmation.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
