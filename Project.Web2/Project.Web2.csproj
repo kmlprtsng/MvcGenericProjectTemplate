@@ -251,6 +251,28 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Core\Project.Core.csproj">
+      <Project>{bff1b71d-b325-4e19-bbab-5b27db8a757c}</Project>
+      <Name>Project.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Data\Project.Data.csproj">
+      <Project>{8745ed96-7f5a-4cb1-84e3-a2226d9a2c72}</Project>
+      <Name>Project.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Domain\Project.Domain.csproj">
+      <Project>{9388dc18-b02e-4ce2-8211-a958b7dd2df2}</Project>
+      <Name>Project.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Service\Project.Service.csproj">
+      <Project>{bd210642-ac0e-41f8-b954-70d52a27edeb}</Project>
+      <Name>Project.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Web.Core\Project.Web.Core.csproj">
+      <Project>{82872cc9-1181-4514-80cb-f95cc93d54e6}</Project>
+      <Name>Project.Web.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
