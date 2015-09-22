@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Project.Data;
+using Project.Web2.Identity;
 using Project.Web2.Models;
 
 namespace Project.Web2
