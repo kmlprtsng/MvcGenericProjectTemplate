@@ -22,11 +22,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Service", "Project.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Domain", "Project.Domain\Project.Domain.csproj", "{9388DC18-B02E-4CE2-8211-A958B7DD2DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Core", "Project.Core\Project.Core.csproj", "{BFF1B71D-B325-4E19-BBAB-5B27DB8A757C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Web.Core", "Project.Web.Core\Project.Web.Core.csproj", "{82872CC9-1181-4514-80CB-F95CC93D54E6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.Web2", "Project.Web2\Project.Web2.csproj", "{62D282D6-D4B5-470B-B02C-DB460F00C90C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9388DC18-B02E-4CE2-8211-A958B7DD2DF2} = {9388DC18-B02E-4CE2-8211-A958B7DD2DF2}
+		{8745ED96-7F5A-4CB1-84E3-A2226D9A2C72} = {8745ED96-7F5A-4CB1-84E3-A2226D9A2C72}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,10 +48,6 @@ Global
 		{9388DC18-B02E-4CE2-8211-A958B7DD2DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9388DC18-B02E-4CE2-8211-A958B7DD2DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9388DC18-B02E-4CE2-8211-A958B7DD2DF2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BFF1B71D-B325-4E19-BBAB-5B27DB8A757C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFF1B71D-B325-4E19-BBAB-5B27DB8A757C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFF1B71D-B325-4E19-BBAB-5B27DB8A757C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFF1B71D-B325-4E19-BBAB-5B27DB8A757C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{82872CC9-1181-4514-80CB-F95CC93D54E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{82872CC9-1181-4514-80CB-F95CC93D54E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82872CC9-1181-4514-80CB-F95CC93D54E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
