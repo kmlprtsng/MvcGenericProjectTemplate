@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using Project.Domain.Entities;
 using Project.Web2.Identity;
 using Project.Web2.Models;
 

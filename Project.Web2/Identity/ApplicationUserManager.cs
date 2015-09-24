@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Project.Data;
-using Project.Web2.Models;
+using Project.Domain.Entities;
 
 namespace Project.Web2.Identity
 {

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Project.Web2.Models;
+using Project.Domain.Entities;
 
 namespace Project.Web2.Identity
 {
