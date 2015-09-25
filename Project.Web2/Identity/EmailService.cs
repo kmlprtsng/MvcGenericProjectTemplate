@@ -1,3 +1,5 @@
+using System.Net.Mail;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 
@@ -7,7 +9,18 @@ namespace Project.Web2.Identity
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
+            var text = message.Body;
+            var html = message.Body;
+
+            var msg = new MailMessage { From = new MailAddress("me@somesite.com") };
+            msg.To.Add(new MailAddress(message.Destination));
+            msg.Subject = message.Subject;
+            msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(text, null, MediaTypeNames.Text.Plain));
+            msg.AlternateViews.Add(AlternateView.CreateAlternateViewFromString(html, null, MediaTypeNames.Text.Html));
+
+            var smtpClient = new SmtpClient();
+            smtpClient.Send(msg);
+
             return Task.FromResult(0);
         }
     }
