@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Project.Domain.Entities;
+using Project.Web.Core.Attributes;
 using Project.Web2.Identity;
 using Project.Web2.Models;
 
@@ -65,6 +66,7 @@ namespace Project.Web2.Controllers
         // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
+        [SpamProtection]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
@@ -150,6 +152,7 @@ namespace Project.Web2.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
+        [SpamProtection]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
@@ -160,7 +163,7 @@ namespace Project.Web2.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link

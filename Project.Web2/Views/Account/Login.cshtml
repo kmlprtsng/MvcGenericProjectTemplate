@@ -1,4 +1,5 @@
-﻿@using Project.Web2.Models
+﻿@using Project.Web.Core.Extensions
+@using Project.Web2.Models
 @model LoginViewModel
 @{
     ViewBag.Title = "Log in";
@@ -11,6 +12,7 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
+                @Html.SpamProtectionTimeStamp()
                 <h4>Use a local account to log in.</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
