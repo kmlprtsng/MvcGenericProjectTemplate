@@ -28,7 +28,7 @@ namespace Project.Data
             if (!roleManager.RoleExists(UserType.Admin.ToString()))
                 roleManager.Create(new IdentityRole(UserType.Admin.ToString()));
 
-            var user = new ApplicationUser { UserName = username };
+            var user = new ApplicationUser { UserName = username, EmailConfirmed = true, Email = username};
             var adminresult = userManager.Create(user, password);
 
             if (adminresult.Succeeded)

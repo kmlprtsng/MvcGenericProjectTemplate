@@ -2,14 +2,12 @@
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
-using Microsoft.AspNet.Identity;
 using Project.Data.Infrastructure;
-using Project.Web.Infrastructure;
 using Project.Web.Mappings;
 
 namespace Project.Web
 {
-    public static class Bootstrapper
+    public class Bootstrapper
     {
         public static void Run()
         {
@@ -23,16 +21,15 @@ namespace Project.Web
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
             builder.RegisterType<DbFactory>().As<IDbFactory>().InstancePerRequest();
-            builder.RegisterType<SmtpEmailService>().As<IIdentityMessageService>().InstancePerRequest();
 
             // Repositories
             //            builder.RegisterAssemblyTypes(typeof(ADD_REPOSITORY_CLASS_NAME_HERE).Assembly)
-//                .Where(t => t.Name.EndsWith("Repository"))
-//                .AsImplementedInterfaces().InstancePerRequest();
+            //                .Where(t => t.Name.EndsWith("Repository"))
+            //                .AsImplementedInterfaces().InstancePerRequest();
             // Services
-//            builder.RegisterAssemblyTypes(typeof(ADD_SERVICE_CLASS_NAME_HERE).Assembly)
-//               .Where(t => t.Name.EndsWith("Service"))
-//               .AsImplementedInterfaces().InstancePerRequest();
+            //            builder.RegisterAssemblyTypes(typeof(ADD_SERVICE_CLASS_NAME_HERE).Assembly)
+            //               .Where(t => t.Name.EndsWith("Service"))
+            //               .AsImplementedInterfaces().InstancePerRequest();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
